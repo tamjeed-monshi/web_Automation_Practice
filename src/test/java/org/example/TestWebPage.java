@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 public class TestWebPage {
     @Test
     public void testPage() throws InterruptedException {
-        WebDriver broeser=new ChromeDriver();
+        WebDriver broeser=new ChromeDriver();//create a browser
         broeser.get("https://rahulshettyacademy.com/AutomationPractice/");
         //textbox-by using id
         WebElement autocompleteTextBox= broeser.findElement(By.id("autocomplete"));
