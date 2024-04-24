@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 public class AdvanceLocator extends BrowserSetup{
     @Test
     public void testpageLocator() throws InterruptedException {
@@ -62,5 +64,15 @@ public class AdvanceLocator extends BrowserSetup{
         WebElement table_text_second= browser.findElement(By.cssSelector("table[name=\"courses\"]>tbody>tr>th:nth-child(2)"));
         System.out.println(table_text_second.getText());
         Thread.sleep(2000);
+        //sibling
+        String text_sibling = browser.findElement(By.xpath("//th[contains(text(),'Instruc')]/following-sibling::th[1]")).getText();
+        System.out.println("sibling :"+text_sibling);
+        Thread.sleep(2000);
+        //multiple data return-using find elements
+        List<WebElement> table_alldata=browser.findElements(By.xpath("//table[@name='courses']//td"));
+        System.out.println(table_alldata.size());
+        for(WebElement p:table_alldata){
+            System.out.println(p.getText());
+        }
     }
 }
