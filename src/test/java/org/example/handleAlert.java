@@ -42,6 +42,7 @@ public class handleAlert extends BrowserSetup{
         alert = browser.switchTo().alert();
         System.out.println(alert.getText());
         alert.sendKeys("hellow banguuuuuu");
+        Thread.sleep(2000);
         alert.accept();
         Thread.sleep(2000);
         System.out.println(browser.findElement(By.xpath("//p[@id='result']")).getText());
@@ -51,6 +52,7 @@ public class handleAlert extends BrowserSetup{
         System.out.println("+++++++++++++++++++++++++++++++++++++++");
         alert = browser.switchTo().alert();
         System.out.println(alert.getText());
+        Thread.sleep(2000);
 
         alert.accept();
         Thread.sleep(2000);
